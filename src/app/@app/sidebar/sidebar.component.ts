@@ -54,20 +54,11 @@ export class SidebarComponent implements OnInit {
     {
       key: 'home',
       type: 'link',
-      name: 'Home',
+      name: 'Dashboard',
       icon: 'home',
-      link: '/'
+      link: '/dashboard/main'
     },
-    {
-      key: 'item-menu-1',
-      type: 'item',
-      name: 'Item menu 1',
-    },
-    {
-      key: 'item-menu-2',
-      type: 'item',
-      name: 'Item menu 2',
-    },
+   
   ];
   navItemLinks: NavigationItem[] = [];
   activeKey: any = 'home';

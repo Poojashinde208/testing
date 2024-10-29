@@ -54,4 +54,5 @@ export class TableWithPaginationExampleComponent {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+  
 }

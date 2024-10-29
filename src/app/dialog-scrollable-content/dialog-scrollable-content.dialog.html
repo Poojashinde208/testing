@@ -1,0 +1,63 @@
+<h3 mat-dialog-title>Translation Details</h3>
+<mat-dialog-content class="prose max-w-full">
+  <h2>Develop across all platforms</h2>
+  <p>
+    Learn one way to build applications with Angular and reuse your code and
+    abilities to build apps for any deployment target. For web, mobile web,
+    native mobile and native desktop.
+  </p>
+
+  <h2>Speed &amp; Performance</h2>
+  
+  <div class="c-container">
+    <h6>Connection Information</h6>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h6 class="card-title">Sender BIC</h6>
+            <p class="card-text">CHASGB2LXXX</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h6 class="card-title">
+              Receiver BIC <span class="badge badge-primary">Primary</span>
+            </h6>
+            <p class="card-text">CHASUS33XXX</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @if (data.events.length > 0 ) {
+  <table  >
+    <tr>
+      <th>Event Id</th>
+      <th>Status Reason</th>
+      <th>Time Stamp</th>
+      <th>FLow Type</th>
+    </tr>
+    @for (event of  data.events; track event.id) {
+    <tr>
+      <td>{{event.id}}</td>
+      <td>{{event.statusCode}}</td>
+      <td>{{event.timestamp}}</td>
+      <td>{{event.translationDirection}}</td>
+    </tr>
+  }
+  </table>
+}
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    mat-flat-button
+    color="primary"
+    [mat-dialog-close]="true"
+    cdkFocusInitial
+  >
+    Close
+  </button>
+</mat-dialog-actions>
