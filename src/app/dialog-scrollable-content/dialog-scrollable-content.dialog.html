@@ -1,63 +1,74 @@
+<div style="width:800px">
 <h3 mat-dialog-title>Translation Details</h3>
 <mat-dialog-content class="prose max-w-full">
-  <h2>Develop across all platforms</h2>
-  <p>
-    Learn one way to build applications with Angular and reuse your code and
-    abilities to build apps for any deployment target. For web, mobile web,
-    native mobile and native desktop.
-  </p>
-
-  <h2>Speed &amp; Performance</h2>
-  
-  <div class="c-container">
-    <h6>Connection Information</h6>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card" style="width: 18rem">
-          <div class="card-body">
-            <h6 class="card-title">Sender BIC</h6>
-            <p class="card-text">CHASGB2LXXX</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card" style="width: 18rem">
-          <div class="card-body">
-            <h6 class="card-title">
-              Receiver BIC <span class="badge badge-primary">Primary</span>
-            </h6>
-            <p class="card-text">CHASUS33XXX</p>
-          </div>
-        </div>
-      </div>
+  <h3>Message Property</h3>
+  <div class="grid grid-cols-12 gap-6 ng-star-inserted">
+    <div class="col-span-6"><strong>RequestId : </strong>{{data.ele.requestId}}</div>
+    <div class="col-span-6"><strong>creationTimestamp :</strong> {{data.ele.creationTimestamp}}</div>
+    <div class="col-span-6"><strong>statusCode :</strong> {{data.ele.statusCode}}</div>
+    <div class="col-span-6"><strong>statusReason :</strong> {{data.ele.statusReason}}</div>
+    <div class="col-span-6"><strong>flowType :</strong> {{data.ele.flowType}}</div>
+    <div class="col-span-6"><strong>translationDirection :</strong> {{data.ele.translationDirection}}</div>
+    <div class="col-span-6"><strong>inputMessageType :</strong> {{data.ele.inputMessageType}}</div>
+    <div class="col-span-6"><strong>receiverBic : </strong>{{data.ele.receiverBic}}</div>
+    <div class="col-span-6"><strong>senderBic :</strong> {{data.ele.senderBic}}</div>
+    <div class="col-span-6"><strong>outputMessageType :</strong> {{data.ele.outputMessageType}}</div>
+    <div class="col-span-6"><strong>senderDn : </strong>{{data.ele.senderDn}}</div>
+    <div class="col-span-6"><strong>receiverDn :</strong> {{data.ele.receiverDn}}</div>
     </div>
+
+  <h3>Message Clob</h3>
+  <div class="grid grid-cols-12 gap-6 ng-star-inserted">
+
+    <div class="col-span-6">
+    <mat-card class="w-full">
+      <mat-card-header>
+        <mat-card-title>Input Message</mat-card-title> 
+      </mat-card-header>
+      <mat-card-content>
+        <p class="text-sm mt-5">
+          {{data.ele.inputMessage}}
+        </p>
+      </mat-card-content>
+    </mat-card>
   </div>
-  @if (data.events.length > 0 ) {
-  <table  >
+  <div class="col-span-6">
+    <mat-card class="w-full">
+      <mat-card-header>
+        <mat-card-title>Output Message</mat-card-title> 
+      </mat-card-header>
+      <mat-card-content>
+        <p class="text-sm mt-5">
+          {{data.ele.outputMessage}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  </div>
+  <h3>Message Event</h3>
+  @if (events.length > 0 ) {
+  <table>
     <tr>
       <th>Event Id</th>
       <th>Status Reason</th>
       <th>Time Stamp</th>
       <th>FLow Type</th>
     </tr>
-    @for (event of  data.events; track event.id) {
+    @for (event of data.ele.events; track event.id) {
     <tr>
       <td>{{event.id}}</td>
       <td>{{event.statusCode}}</td>
       <td>{{event.timestamp}}</td>
       <td>{{event.translationDirection}}</td>
     </tr>
-  }
+    }
   </table>
-}
+  }
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button
-    mat-flat-button
-    color="primary"
-    [mat-dialog-close]="true"
-    cdkFocusInitial
-  >
+  <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>
     Close
   </button>
 </mat-dialog-actions>
+
+</div>

@@ -1,0 +1,11 @@
+.mat-mdc-card-title{
+    font-size: 16px;
+}
+.mat-mdc-card-subtitle{
+    font-size: 15px;
+}
+::ng-deep{
+    .cdk-overlay-pane.mat-mdc-dialog-panel{
+        max-width: 90vw !important;
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "http://172.20.107.126:8081/v1/api/messages/search?creationTimestampFrom=2024-10-20T22:49&creationTimestampTo=2024-10-29T22:48",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "/api":""}
+    }
+  } 

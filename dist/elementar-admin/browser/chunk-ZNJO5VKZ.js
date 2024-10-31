@@ -1,0 +1,1 @@
+import{Tb as o,Ub as i,oc as s,sa as n,vc as a}from"./chunk-5NFIDSHC.js";var p=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=n({type:e,selectors:[["app-access-denied"]],standalone:!0,features:[a],decls:2,vars:0,template:function(t,r){t&1&&(o(0,"p"),s(1,"access-denied works!"),i())}})}}return e})();export{p as AccessDeniedComponent};
